@@ -1,4 +1,4 @@
-const { category } = require("../models");
+const { category, clothe } = require("../models");
 
 class CategoryController {
     static async getCategories(req, res) {
@@ -35,6 +35,12 @@ class CategoryController {
 
             let deleteCategory = await category.destroy({ where: { id } });
 
+            let deleteClothe = await clothe.destroy({
+                where: {
+                    categoryId: id,
+                },
+            });
+
             deleteCategory === 1
                 ? res.redirect("/categories")
                 : res.json({
@@ -56,17 +62,18 @@ class CategoryController {
             res.json(error);
         }
     }
+
     static async update(req, res) {
         try {
             const id = +req.params.categoryId;
             const { name } = req.body;
 
-            let updateCategoryById = await category.update(
+            let updateCategory = await category.update(
                 { name },
                 { where: { id } }
             );
 
-            updateCategoryById[0] === 1
+            updateCategory[0] === 1
                 ? res.redirect("/categories")
                 : res.json({
                       message: `Category id ${id} not found!`,

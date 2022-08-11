@@ -10,7 +10,7 @@ route.get("/", (req, res) => {
 
 route.use("/categories", categoryRoutes);
 route.use("/clothes", clotheRoutes);
-route.use("/costumers", customerRoutes);
+route.use("/customers", customerRoutes);
 route.use("/orders", orderRoutes);
 
 module.exports = route;
