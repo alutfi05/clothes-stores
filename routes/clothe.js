@@ -7,5 +7,6 @@ clotheRoute.post("/create", ClotheController.create);
 clotheRoute.get("/delete/:clotheId", ClotheController.delete);
 clotheRoute.get("/update/:clotheId", ClotheController.updatePage);
 clotheRoute.post("/update/:clotheId", ClotheController.update);
+clotheRoute.get("/:clotheId/customers", ClotheController.details);
 
 module.exports = clotheRoute;

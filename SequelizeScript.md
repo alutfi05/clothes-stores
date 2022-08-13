@@ -10,6 +10,6 @@ npx sequelize-cli model:generate --name clothe --attributes name:string,image:st
 
 npx sequelize-cli model:generate --name customer --attributes name:string,email:string,phoneNumber:integer,city:string,address:string,postalCode:integer
 
-npx sequelize-cli model:generate --name order --attributes quantity:integer,totalPrice:integer,customerId:integer,clotheId:integer
+npx sequelize-cli model:generate --name order --attributes customerId:integer,clotheId:integer
 
 ```

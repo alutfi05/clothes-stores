@@ -7,14 +7,21 @@ class CategoryController {
                 order: [["id", "asc"]],
             });
 
-            res.render("categoryViews/category.ejs", { categories });
+            res.render("categoryViews/category.ejs", {
+                title: "Categories Page",
+                location: "categories",
+                categories,
+            });
         } catch (error) {
             res.json(error);
         }
     }
 
     static createPage(req, res) {
-        res.render("categoryViews/createPage.ejs");
+        res.render("categoryViews/createPage.ejs", {
+            title: "Category Create Page",
+            location: "categories",
+        });
     }
 
     static async create(req, res) {
@@ -57,7 +64,11 @@ class CategoryController {
 
             let findCategoryById = await category.findByPk(id);
 
-            res.render("categoryViews/updatePage.ejs", { findCategoryById });
+            res.render("categoryViews/updatePage.ejs", {
+                title: "Category Update Page",
+                location: "categories",
+                findCategoryById,
+            });
         } catch (error) {
             res.json(error);
         }

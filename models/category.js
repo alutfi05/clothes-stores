@@ -14,7 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
     category.init(
         {
-            name: DataTypes.STRING,
+            name: {
+                type: DataTypes.STRING,
+                validate: {
+                    notEmpty: {
+                        message: "Category can't be empty!",
+                    },
+                },
+            },
         },
         {
             sequelize,

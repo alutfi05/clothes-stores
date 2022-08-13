@@ -1,0 +1,24 @@
+<div class="shadow-sm p-2 mb-5 bg-white rounded">
+    <nav class="navbar navbar-expand-lg fw-500" style="background-color: #fff">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="/">Clothes Stores</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link mx-1" href="/">Home</a>
+                    <a class="nav-link mx-1 <%= location === 'clothes' ? 'text-white bg-danger rounded' : '' %>"
+                        href="/clothes">Clothes</a>
+                    <a class="nav-link mx-1 <%= location === 'customers' ? 'text-white bg-danger rounded' : '' %>"
+                        href="/customers">Customer</a>
+                    <a class="nav-link mx-1 <%= location === 'categories' ? 'text-white bg-danger rounded' : '' %>"
+                        href="/categories">Category</a>
+                    <a class="nav-link mx-1 <%= location === 'orders' ? 'text-white bg-danger rounded' : '' %>"
+                        href="/orders">Order</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

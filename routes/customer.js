@@ -7,5 +7,6 @@ customerRoute.post("/create", CustomerController.create);
 customerRoute.get("/delete/:customerId", CustomerController.delete);
 customerRoute.get("/update/:customerId", CustomerController.updatePage);
 customerRoute.post("/update/:customerId", CustomerController.update);
+customerRoute.get("/:customerId/clothes", CustomerController.details);
 
 module.exports = customerRoute;
