@@ -1,0 +1,585 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "Clothes Stores Basic CRUD API with express.js"
+    },
+    "host": "",
+    "basePath": "/",
+    "securityDefinitions": {},
+    "schemes": ["https"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/clothes": {
+            "get": {
+                "summary": "Get All Clothes",
+                "tags": ["clothes"],
+                "operationId": "clothes",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/clothes/create": {
+            "post": {
+                "summary": "Create Clothe",
+                "tags": ["clothes"],
+                "operationId": "createClothe",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "image": "Body",
+                        "price": "Body",
+                        "stock": "Body",
+                        "categoryId": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/createClothe"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/clothes/update/1": {
+            "post": {
+                "summary": "Update Clothe By Id",
+                "tags": ["clothes"],
+                "operationId": "updateClothe",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "image": "Body",
+                        "price": "Body",
+                        "stock": "Body",
+                        "categoryId": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/updateClothe"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/clothes/delete/1": {
+            "post": {
+                "summary": "Delete Clothe By Id",
+                "tags": ["clothes"],
+                "operationId": "deleteClothe",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/customers": {
+            "get": {
+                "summary": "Get All Customers",
+                "tags": ["customers"],
+                "operationId": "customers",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/customers/create": {
+            "post": {
+                "summary": "Create Customer",
+                "tags": ["customers"],
+                "operationId": "createCustomer",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "email": "Body",
+                        "phoneNumber": "Body",
+                        "city": "Body",
+                        "address": "Body",
+                        "postalCode": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/createCustomer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/customers/update/1": {
+            "post": {
+                "summary": "Update Customer By Id",
+                "tags": ["customers"],
+                "operationId": "updateCustomer",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "email": "Body",
+                        "phoneNumber": "Body",
+                        "city": "Body",
+                        "address": "Body",
+                        "postalCode": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/updateCustomer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/customers/delete/1": {
+            "post": {
+                "summary": "Delete Customer By Id",
+                "tags": ["customers"],
+                "operationId": "deleteCustomer",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/categories": {
+            "get": {
+                "summary": "Get All Categories",
+                "tags": ["categories"],
+                "operationId": "categories",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/categories/create": {
+            "post": {
+                "summary": "Create Category",
+                "tags": ["categories"],
+                "operationId": "createCategory",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/createCategory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/categories/update/1": {
+            "post": {
+                "summary": "Update Category By Id",
+                "tags": ["categories"],
+                "operationId": "updateCategory",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/updateCategory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/categories/delete/1": {
+            "post": {
+                "summary": "Delete Category By Id",
+                "tags": ["categories"],
+                "operationId": "deleteCategory",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/orders": {
+            "get": {
+                "summary": "Get All Orders",
+                "tags": ["orders"],
+                "operationId": "orders",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/orders/create": {
+            "post": {
+                "summary": "Create Order",
+                "tags": ["orders"],
+                "operationId": "createOrder",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "customerId": "Body",
+                        "clotheId": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/createOrder"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/orders/update/1": {
+            "post": {
+                "summary": "Update Order By Id",
+                "tags": ["orders"],
+                "operationId": "updateOrder",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "customerId": "Body",
+                        "clotheId": "Body",
+                        "in": "body",
+                        "required": true,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/updateOrder"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        "/orders/delete/1": {
+            "post": {
+                "summary": "Delete Order By Id",
+                "tags": ["orders"],
+                "operationId": "deleteOrder",
+                "deprecated": false,
+                "produces": ["application/json"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {}
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "createClothe": {
+            "title": "createClothe",
+            "example": {
+                "name": "Baju Kaos Partai",
+                "image": "https://imagelink.com",
+                "price": 50000,
+                "stock": 100,
+                "categoryId": 1
+            },
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "integer"
+                },
+                "stock": {
+                    "type": "integer"
+                },
+                "categoryId": {
+                    "type": "integer"
+                }
+            },
+            "required": ["name", "image", "price", "stock", "categoryId"]
+        },
+        "updateClothe": {
+            "title": "updateClothe",
+            "example": {
+                "name": "Baju Kaos Partai di Edit",
+                "image": "https://imagelink.com",
+                "price": 50000,
+                "stock": 100,
+                "categoryId": 1
+            },
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "integer"
+                },
+                "stock": {
+                    "type": "integer"
+                },
+                "categoryId": {
+                    "type": "integer"
+                }
+            },
+            "required": ["name", "image", "price", "stock", "categoryId"]
+        },
+        "createCustomer": {
+            "title": "createCustomer",
+            "example": {
+                "name": "John Doe",
+                "email": "example@email.com",
+                "phoneNumber": 123456,
+                "city": "Depok",
+                "address": "Jl. Jalan Kenangan",
+                "postalCode": 16432
+            },
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "integer"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "name",
+                "email",
+                "phoneNumber",
+                "city",
+                "address",
+                "postalCode"
+            ]
+        },
+        "updateCustomer": {
+            "title": "updateCustomer",
+            "example": {
+                "name": "John Doe Edited",
+                "email": "example@email.com",
+                "phoneNumber": 123456,
+                "city": "Depok",
+                "address": "Jl. Jalan Kenangan",
+                "postalCode": 16432
+            },
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "integer"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "name",
+                "email",
+                "phoneNumber",
+                "city",
+                "address",
+                "postalCode"
+            ]
+        },
+        "createCategory": {
+            "title": "createCategory",
+            "example": {
+                "name": "Hoodie"
+            },
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "required": ["name"]
+            }
+        },
+        "updateCategory": {
+            "title": "updateCategory",
+            "example": {
+                "name": "Hoodie Edited"
+            },
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": ["name"]
+        },
+        "createOrder": {
+            "title": "createOrder",
+            "example": {
+                "customerId": 1,
+                "clotheId": 1
+            },
+            "type": "object",
+            "properties": {
+                "customerId": {
+                    "type": "integer"
+                },
+                "clotheId": {
+                    "type": "integer"
+                }
+            },
+            "required": ["customerId", "clotheId"]
+        },
+        "updateOrder": {
+            "title": "updateOrder",
+            "example": {
+                "customerId": 2,
+                "clotheId": 1
+            },
+            "type": "object",
+            "properties": {
+                "customerId": {
+                    "type": "integer"
+                },
+                "clotheId": {
+                    "type": "integer"
+                }
+            },
+            "required": ["customerId", "clotheId"]
+        }
+    },
+    "tags": [
+        {
+            "name": "clothes"
+        },
+        {
+            "name": "customers"
+        },
+        {
+            "name": "categories"
+        },
+        {
+            "name": "orders"
+        }
+    ]
+}
