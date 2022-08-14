@@ -5,7 +5,7 @@
         "title": "Clothes Stores Basic CRUD API with express.js"
     },
     "host": "",
-    "basePath": "/",
+    "basePath": "https://clothes-stores.herokuapp.com/",
     "securityDefinitions": {},
     "schemes": ["https"],
     "consumes": ["application/json"],
