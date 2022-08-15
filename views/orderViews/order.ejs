@@ -35,17 +35,17 @@
             <tbody>
                 <% orders.forEach((order, i) => { %>
                 <tr>
-                    <td><%= i + 1 %></td>
+                    <td><%= order.id %></td>
                     <td><%= order.customerId %></td>
                     <td><%= order.customer.name %></td>
                     <td><%= order.clotheId %></td>
                     <td><%= order.clothe.name %></td>
                     <td>
-                        <a href="/orders/update/<%= i + 1 %>" class="btn btn-warning btn-sm" data-bs-toggle="tooltip"
+                        <a href="/orders/update/<%= order.id %>" class="btn btn-warning btn-sm" data-bs-toggle="tooltip"
                             title="Edit Order" data-bs-custom-class="custom-tooltip-edit">
                             <i class="fa-solid fa-file-pen"></i>
                         </a>
-                        <a href="/orders/delete/<%= i + 1 %>" class="btn btn-danger btn-sm" data-bs-toggle="tooltip"
+                        <a href="/orders/delete/<%= order.id %>" class="btn btn-danger btn-sm" data-bs-toggle="tooltip"
                             title="Delete Order" data-bs-custom-class="custom-tooltip-delete"><i
                                 class="fa-solid fa-trash"></i>
                         </a>

@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
     order.init(
         {
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+            },
             customerId: {
                 type: DataTypes.INTEGER,
                 validate: {
